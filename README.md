@@ -4,6 +4,8 @@ A GitHub Action that lints Python code with Flake8 then automatically creates pu
 
 See [this pull request](https://github.com/grantmcconnaughey/lintly-flake8-github-action/pull/1#pullrequestreview-338419294) for an example.
 
+This repository has been forked from https://github.com/grantmcconnaughey/lintly-flake8-github-action.
+
 ## Usage
 
 To use Lintly-Flake8 GitHub Action, add the following to a GitHub Actions workflow file such as `.github/workflows/main.yml`:
@@ -24,6 +26,8 @@ jobs:
           failIf: new
           # Additional arguments to pass to flake8, default "." (current directory)
           args: "--ignore=E121,E123 ."
+          # Additional arguments to pass to lintly, default empty.
+          lintlyargs: "--no-request-changes"
 ```
 
 Now each PR created will be linted with Flake8. If there are any violations then Lintly will comment on the PR using the `github-actions` bot user.
