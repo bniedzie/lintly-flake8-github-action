@@ -37,6 +37,6 @@ Now each PR created will be linted with Flake8. If there are any violations then
 **Note:** Lintly-Flake8 only works with the `pull_request` event. If your job runs on the `push` event then make sure the Lintly-Flake8 step only runs on the pull request event by adding `if: github.event_name == 'pull_request'`:
 
 ```yaml
-      - uses: grantmcconnaughey/lintly-flake8-github-action@v1.0
+      - uses: bniedzie/lintly-flake8-github-action@main
         if: github.event_name == 'pull_request'
 ```
